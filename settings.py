@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'itanery_django.urls'
+ROOT_URLCONF = 'urls'
 
 # Templates
 TEMPLATES = [
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'itanery_django.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
