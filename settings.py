@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',   # ⭐ add this line
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,11 +130,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Django apps ke andar jo static/ folders hain (jese itinery_app/itinery/static/)
+# unko Django khud pick karega, isliye STATICFILES_DIRS optional hai.
+# Agar root level pe 'static/' me extra assets rakhne hain tab hi use karo, warna hata do.
+# Agar rakhna ho to aise:
+# STATICFILES_DIRS = [
+#     BASE_DIR / 'static',
+# ]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic yahi par sab copy karega
+
+# Whitenoise storage (production ke liye)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # Media files (User uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
 
 
