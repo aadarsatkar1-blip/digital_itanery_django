@@ -131,18 +131,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Django apps ke andar jo static/ folders hain (jese itinery_app/itinery/static/)
-# unko Django khud pick karega, isliye STATICFILES_DIRS optional hai.
-# Agar root level pe 'static/' me extra assets rakhne hain tab hi use karo, warna hata do.
-# Agar rakhna ho to aise:
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-# ]
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',   # yahi folder hai jisme css/output.css hai
+]
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # collectstatic yahi par sab copy karega
-
-# Whitenoise storage (production ke liye)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 
 # Media files (User uploads)
 MEDIA_URL = '/media/'
