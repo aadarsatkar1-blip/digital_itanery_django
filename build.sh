@@ -8,7 +8,8 @@ pip install -r requirements.txt
 npm install
 
 # build tailwind css
-npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify
+npx tailwindcss -i ./static/css/input.css -o ./staticfiles/css/output.css --minify
+
 
 # collect static files
 python manage.py collectstatic --no-input

@@ -19,7 +19,7 @@ env/
 *.log
 local_settings.py
 media/
-staticfiles/
+
 datadump.json
 
 # IDE
