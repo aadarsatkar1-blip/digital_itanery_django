@@ -132,7 +132,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static/css',   # yahi folder hai jisme css/output.css hai
+    BASE_DIR / 'static',   # yahi folder hai jisme css/output.css hai
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
