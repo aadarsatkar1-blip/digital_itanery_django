@@ -25,18 +25,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('_nested_admin/', include('nested_admin.urls')),  # ✅ ADD THIS LINE
+    path('_nested_admin/', include('nested_admin.urls')),
     path('', include('itanery_app.urls')),
 ]
 
-
-# Development me static/media serve karne ke liye
+# Development only (production me WhiteNoise handle karega)
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
 
 
