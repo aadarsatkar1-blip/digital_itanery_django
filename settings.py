@@ -126,11 +126,11 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
-
 # Static files (CSS, JS, Images)
 STATIC_URL = '/static/'
+
+# ✅ Source folder for static files (ADD THIS LINE)
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 # ✅ Production static output directory
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -138,10 +138,10 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # ✅ WhiteNoise for Render
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-
 # Media files (User uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
 
 
 
